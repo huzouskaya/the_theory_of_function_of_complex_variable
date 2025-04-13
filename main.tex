@@ -1,0 +1,299 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{tikz}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\title{Теория функций комплексной переменной\\ ТФКП ИДЗ 1}
+\author{Гузовская Александра Чеславовна\\Б9123-01.03.02сп}
+\date{27 марта 2025}
+
+\begin{document}
+\maketitle
+\section{Найти все значения корня $\sqrt[3]{i}$}
+корень некоторой степени из комплексного числа находится по формуле
+$$\sqrt[n]{z} = \sqrt[n]{r}\bigg(\cos{\frac{\varphi+2\pi k}{n}}+ \sin{\frac{\varphi+2\pi k}{n}}\bigg)$$
+где r есть модуль комплексного числа z, k изменяется от 0 до n-1, всего n значений корня комплексного числа n-ой степени
+$$z_k = \sqrt[n]{r}\bigg(\cos{\frac{\varphi+2\pi k}{n}} + \sin{\frac{\varphi+2\pi k}{n}}\bigg)$$
+подставляя значения k постепенно получим все корни\\
+рассмотрим данный случай из задания: модуль этого комплексного числа равен 1, степень искомая равня трём, подставим\\
+$$z_0 = \sqrt[3]{1}\bigg(\cos{\frac{\varphi+2\pi \cdot 0}{3}}+ i\sin{\frac{\varphi+2\pi \cdot 0}{3}}\bigg) = \cos{\frac{\varphi}{3}} + \sin{\frac{\varphi}{3}}$$
+$$z_1 = \sqrt[3]{1}\bigg(\cos{\frac{\varphi+2\pi \cdot 1}{3}}+ i\sin{\frac{\varphi+2\pi \cdot 1}{3}}\bigg) = \cos{\frac{\varphi + 2\pi}{3}} + i\sin{\frac{\varphi + 2\pi}{3}}$$
+$$z_2 = \sqrt[3]{1}\bigg(\cos{\frac{\varphi+2\pi \cdot 2}{3}}+ i\sin{\frac{\varphi+2\pi \cdot 2}{3}}\bigg) = \cos{\frac{\varphi + 4\pi}{3}} + i\sin{\frac{\varphi + 4\pi}{3}}$$
+из алгебраического представления комплексного числа мы также можем узнать его аргумент (угол $\varphi = \arctan{\frac{b}{a}}$), в нашем случае a = b = 1, $\arctan{1} = \frac{\pi}{4}$\\
+$$\cos{\frac{\pi}{12}} + \sin{\frac{\pi}{12}}$$
+$$\cos{\frac{9\pi}{12}} + i\sin{\frac{9\pi}{12}} = \cos{\frac{3\pi}{4}} + i\sin{\frac{3\pi}{4}}$$
+$$\cos{\frac{17\pi}{12}} + \sin{\frac{17\pi}{12}}$$
+\subsection*{Ответ:} 
+$$\sqrt[3]{i} = \{ \frac{\sqrt{3}}{2} + i\frac{1}{2}; -\frac{\sqrt{3}}{2} + i\frac{1}{2}; -i \}$$
+
+\section{Представить в алгебраической форме}
+\subsection{ $\cos{(\frac{\pi}{6} - i)}$}
+Используем формулу косинуса разности\\
+$$\cos{\frac{\pi}{6} - i} = \cos{\frac{\pi}{6}} \cdot \cos{i} + \sin{\frac{\pi}{6}} \cdot \sin{i}$$
+Функции с мнимыми аргументами представим в виде показательных:\\
+$$\frac{\sqrt{3}}{2} \cdot \frac{e^{-1} + e^1}{2} + \frac{1}{2} \cdot \frac{e^{-1} - e^1}{2i} = \bigg(\frac{\sqrt{3}}{2} \cdot \frac{e^{-1} + e^1}{2} \bigg) + i \cdot \bigg(\frac{1}{2} \cdot \frac{e^1 - e^{-1}}{2}\bigg)$$
+\subsubsection*{Ответ:}
+$$\bigg(\frac{\sqrt{3} \cdot (e^{-1} + e^1)}{4} \bigg) + i \cdot \bigg(\frac{e^1 - e^{-1}}{4} \bigg)$$
+
+\subsection{$arth \bigg(\frac{3 + i\cdot2\sqrt{3}}{7}\bigg)$}
+Используем представление гиперболического арктангенса через логарифм:
+$$arth (z) = \frac{1}{2} \ln\left(\frac{1+z}{1-z}\right)$$
+$$\frac{1+z}{1-z} = \frac{1 + \frac{3 + i\cdot 2\sqrt{3}}{7}}{1 - \frac{3 + i\cdot 2\sqrt{3}}{7}} = \frac{\frac{10 + i\cdot 2\sqrt{3}}{7}}{\frac{4 - i \cdot 2 \sqrt{3}}{7}} = \frac{10 + i\cdot2\sqrt{3}}{4 - i\cdot2\sqrt{3}}$$
+Умножим числитель и знаменатель на сопряженное $(4 + i\cdot2\sqrt{3})$:
+$$= \frac{(10 + i\cdot2\sqrt{3})(4 + i\cdot2\sqrt{3})}{(4)^2 + (2\sqrt{3})^2} = \frac{40 + i\cdot20\sqrt{3} + i\cdot4\sqrt{3} - 12}{16 + 12} =$$
+$$= \frac{28 + \cdot24\sqrt{3}}{28} = 1 + i\cdot\frac{6\sqrt{3}}{7}$$
+$$\operatorname{arth}(z) = \frac{1}{2} \ln\left(1 + i\cdot\frac{6\sqrt{3}}{7}\right)$$
+Представим в показательной форме:
+$$1 + i\cdot\frac{6\sqrt{3}}{7} = \sqrt{1 + \left(\frac{6\sqrt{3}}{7}\right)^2} \cdot e^{i\cdot\arctan\left(\frac{6\sqrt{3}}{7}\right)} = \sqrt{\frac{157}{49}} \cdot e^{i\cdot\arctan\left(\frac{6\sqrt{3}}{7}\right)}$$
+Получили:
+$$\operatorname{arth}\left(\frac{3 + i\cdot2\sqrt{3}}{7}\right) = \frac{1}{4}\ln\left(\frac{157}{49}\right) + \frac{i}{2}\arctan\left(\frac{6\sqrt{3}}{7}\right) + i\pi k, \quad k \in \mathbb{Z}$$
+\subsubsection*{Ответ:}
+$$\frac{1}{4}\ln\left(\frac{157}{49}\right) + \frac{i}{2}\left(\arctan\left(\frac{6\sqrt{3}}{7}\right) + 2\pi k\right) \approx \frac{1}{2} \cdot 0,693 + \frac{i}{2}(\frac{2\pi}{3} + 2\pi k), k = 0, \pm 1, \pm 2, ...$$
+
+\subsection{$(-1 + 2i)^{2i}$}
+Используем формулу: 
+$$z^w = e^{w \cdot Ln z}$$
+Для $z = -1 + 2i$:
+$$|z| = \sqrt{5}, \quad \operatorname{Arg} z = \pi - \arctan 2$$
+$$Ln z = \frac{1}{2}\ln 5 + i(\pi - \arctan 2)$$
+$$(-1 + 2i)^{2i} = e^{i\ln 5 - 2(\pi - \arctan 2)}
+= e^{-2\pi + 2\arctan 2} \cdot (\cos(\ln 5) + i\sin(\ln 5))$$
+\subsubsection*{Ответ:}
+$$e^{-2\pi + 2\arctan 2} \cos(\ln 5) + i e^{-2\pi + 2\arctan 2} \sin(\ln 5)$$
+
+\subsection{$Ln(1+i)$}
+Логарифмическая функция Ln(z), $z \neq 0$ определяется как обратная показательной и имеет вид: $$Ln(z) = ln|z| + i\cdot Arg(z) = ln|z| + i(arg(z) + 2\pi k), k = 0, \pm 1, \pm 2, ...$$
+подставим значение комплексного числа из задания\\
+ $$Ln(1+i) = ln|1+i| + i\cdot Arg(1+i) = ln \sqrt{2} + i(arg(1+i) + 2\pi k) \approx$$ 
+\subsubsection*{Ответ:}
+$$\approx 0,347 + i(\frac{\pi}{4} + 2\pi k), k = 0, \pm 1, \pm 2, ...$$
+
+\FloatBarrier
+\section{Вычертить область, заданную неравенствами: $$D = \{z: |z|<2, Re z \geq 1, arg z < \pi/4\}$$}
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+    \draw[->] (-3,0) -- (3,0) node[right] {\text{Re } z};
+    \draw[->] (0,-3) -- (0,3) node[above] {\text{Im } z};
+    \draw[thick, blue, domain=0:360] plot ({2*cos(\x)}, {2*sin(\x)}) node[above right] {$|z|=2$};
+    \draw[thick, red] (1,-2) -- (1,2) node[above right] {$\text{Re } z = 1$};
+    \draw[thick, green] (0,0) -- (2,2) node[above right] {$\arg z = \frac{\pi}{4}$};
+    \draw[thick, green] (0,0) -- (2,-2);
+    \fill[cyan, opacity=0.3] (1,0) -- (2,2) -- (2,-2) -- (1,0) -- cycle;
+    \node at (1.5, 0.5) {Область D};
+\end{tikzpicture}
+\end{center}
+\FloatBarrier
+
+\section{Определить вид пути в случае, когда он проходит через точку $\infty$, исследовать его поведение в этой точке: $$z = 3 \cdot \csc(t) + i \cdot 3 \cdot \cot(t) $$}
+Уравнение вида \\
+$z = z(t) = x(t) + i \cdot y(t)$ \\
+определяет на комплексной плоскости параметрически заданную кривую:\\ \\
+\[
+\begin{cases}
+    x = x(t)\\
+    y = y(t)
+\end{cases}
+\]
+\\или в этом конкретном случае:\\ \\
+\[
+\begin{cases}
+    x(t) = 3 \cdot \csc(t)\\
+    y(t) = 3 \cdot \cot(t)
+\end{cases}
+\]
+выразим из этой системы параметр через x, y\\
+$$x = 3 \cdot cosec(t) = \frac{3}{\sin{t}} \Longrightarrow \sin{t} = \frac{3}{x} \Longrightarrow t = arcsin\bigg(\frac{3}{x} \bigg)$$
+$$y = 3 \cdot ctg(t) \Longrightarrow ctg(t) = \frac{y}{3} \Longrightarrow t = arcctg \bigg(\frac{y}{3} \bigg)$$
+Получили уравнение кривой в виде $F(x,y) = 0$:\\
+$$arcsin\bigg(\frac{3}{x} \bigg) = arcctg \bigg(\frac{y}{3} \bigg) \Longrightarrow arcsin\bigg(\frac{3}{x} \bigg) - arcctg \bigg(\frac{y}{3} \bigg) = 0$$
+\subsection*{Ответ:}
+$$arcsin\bigg(\frac{3}{x} \bigg) = arcctg \bigg(\frac{y}{3} \bigg) \Longrightarrow arcsin\bigg(\frac{3}{x} \bigg) - arcctg \bigg(\frac{y}{3} \bigg) = 0$$
+
+\section{Восстановить голоморфную в окрестности точки $z_0$ функцию $f(z)$ по известной действительной части $u(x,y)$ или мнимой $v(x,y)$ и начальному значению $f(z_o): v = x^2 - y^2 + 2x + 1, f(0) = i.$}
+Зная действительную часть аналитической функции, можно узнать производную аналитической функции по формуле:
+$$f'(z) = \frac{\partial v}{\partial y} + i \cdot \frac{\partial v}{\partial x}$$
+Найдём её:
+$$f'(z) = f'(x + i\cdot y) = -2y + 2ix + 2i = 2(ix - y) + 2i = 2i(x + iy) + 2i = 2iz + 2i$$
+У нас есть известная мнимая часть, тогда, зная производную, можем найти функцию с точностью до константы:
+$$f(z) = \int(2iz + 2i)dz = iz^2 + 2iz + C$$
+затем определим константу - $f(0) = i \cdot 0^2 + 2i \cdot 0 + C = i \Longrightarrow C = i$
+\subsection*{Ответ:} 
+$$f(z) = \int(2iz + 2i)dz = iz^2 + 2iz + i$$
+
+\section{Вычислить интеграл от функции комплексной переменной по данному пути: $$\int_L (z + 1) \cdot e^z dz; L = \{z: |z| = 1, Re(z) \geq 0\}$$}
+График кривой, по которой будет проходить интегрирование:
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+    \draw[->] (-1,0) -- (1,0) node[right] {\text{Re } z};
+    \draw[->] (0,-1) -- (0,1) node[above] {\text{Im } z};
+    \draw[thick, blue, domain=0:360] plot ({cos(\x)}, {sin(\x)});
+\end{tikzpicture}
+\end{center}
+\FloatBarrier
+Проверим, является ли исходная функция аналитической (сделаем переход):
+$$f(x,y) = u(x,y) + i\cdot v(x,y);   z = x + iy$$
+$$f(z) = (z + 1) \cdot e^z = e^x \cdot (x + iy + 1) \cdot (\cos{y} + i \cdot \sin{y}) = $$
+$$= e^x (x \cdot \cos{y} + \cos{y} - y \cdot \sin{y}) + i \cdot e^x (y \cdot \cos{y} + x \cdot \sin{y} + \sin{y})$$
+\subsection*{Проверим на условие Коши-Римана:}
+$$u(x,y) = e^x (x \cdot \cos{y} + \cos{y} - y \cdot \sin{y})$$
+$$v(x,y) = e^x (y \cdot \cos{y} + x \cdot \sin{y} + \sin{y})$$
+$$\frac{\partial u}{\partial x} = e^x (x \cdot \cos{y} + 2 \cdot \cos{y} - y \cdot \sin{y}); \frac{\partial v}{\partial y} = e^x (x \cdot \cos{y} + 2 \cdot \cos{y} - y \cdot \sin{y});$$
+$$\frac{\partial u}{\partial y} = - e^x (x \cdot \sin{y} - 2 \cdot \sin{y} - y \cdot \cos{y});\frac{\partial v}{\partial x} = e^x (x \cdot \sin{y} + 2 \cdot \sin{y} - y \cdot \cos{y});$$
+Проверка:
+$$ \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}$$
+$$\frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x}$$
+Так как выполняются условия Коши-Римана, функция является аналитической, а следовательно результат не зависит от пути интегрирования\\
+$$\int_L (z + 1) \cdot e^z = \int^1_{-1} (z + 1) \cdot e^z dz = ze^z \bigg| _{-1}^1 = i \cdot (e^z + \frac{1}{e^z})$$
+\subsection*{Ответ:} 
+$$\int_L (z + 1) \cdot e^z = i \cdot (e^z + \frac{1}{e^z})$$
+
+\section{Найти радиус сходимости степенного ряда $$\sum_{n=1}^{\infty} (i^n \cdot n \cdot (2 + i^n)) \cdot z^n$$}
+Коэффициент ряда и его модуль:
+$$a_n = i^n \cdot n \cdot (2 + i^n)$$
+$$|a_n| = |i^n| \cdot |n| \cdot |2 + i^n| = n \cdot |2 + i^n|$$
+\\
+Учитывая цикличность степеней мнимой единицы:
+\begin{align*}
+i^1 &= i \\
+i^2 &= -1 \\
+i^3 &= -i \\
+i^4 &= 1 \\
+&\dots
+\end{align*}
+\\
+Вычислим $|2 + i^n|$ для разных случаев:
+\begin{align*}
+n \equiv 1 \ (\mathrm{mod}\ 4) &: |2 + i| = \sqrt{5} \\
+n \equiv 2 \ (\mathrm{mod}\ 4) &: |2 - 1| = 1 \\
+n \equiv 3 \ (\mathrm{mod}\ 4) &: |2 - i| = \sqrt{5} \\
+n \equiv 0 \ (\mathrm{mod}\ 4) &: |2 + 1| = 3
+\end{align*}
+\subsection*{Используем формулу Коши-Адамара:}
+$$R = \frac{1}{\limsup_{n\to\infty} \sqrt[n]{|a_n|}}$$
+$$\sqrt[n]{|a_n|} = \sqrt[n]{n \cdot |2 + i^n|} \leq \sqrt[n]{3n} \to 1 \quad \text{при} \quad n\to\infty$$
+\\
+Для подпоследовательности $n=4k$:
+$$\sqrt[4k]{|a_{4k}|} = \sqrt[4k]{3 \cdot 4k} \to 1$$
+Наконец, вычислим радиус сходимости:
+$$\limsup_{n\to\infty} \sqrt[n]{|a_n|} = 1 \implies R = \frac{1}{1} = 1$$
+\subsection*{Ответ}
+Радиус сходимости ряда: 1
+
+\section{Найти лорановские разложения данной функции в 0 и в $\infty$: $$f(z) = \frac{3z - 36}{z^4 + 3z^3 - 18z^2}$$}
+Преобразуем функцию:
+$$\frac{3z - 36}{z^4 + 3z^3 - 18z^2} = \frac{3(z - 12)}{z^2(z + 6)(z - 3)} = \frac{3}{z^2} \cdot \frac{(z - 12)}{(z + 6)(z - 3)}$$
+Разложим $\frac{(z - 12)}{(z + 6)(z - 3)}$ на сумму двух дробей методом неопределённых коэффициентов:
+$$\frac{(z - 12)}{(z + 6)(z - 3)} = \frac{A}{z + 6} + \frac{B}{z - 3} =$$
+$$= \frac{A \cdot (z - 3)}{(z + 6)(z - 3)} + \frac{B \cdot (z + 6)}{(z + 6)(z - 3)}$$
+$$\Longrightarrow \{A = 2; B = -1\} \Longrightarrow \frac{(z - 12)}{(z + 6)(z - 3)} = \frac{2}{z + 6} - \frac{1}{z - 3}$$
+Тогда получили следующий вид функции, найдём для неё особые точки:
+$$f(z) = \frac{3}{z^2} \cdot \bigg(\frac{2}{z + 6} - \frac{1}{z - 3}\bigg)$$
+$$\text{Особые точки: } z = 0, z = 3, z = -6$$
+\begin{tikzpicture}
+    \draw[->] (-4, 0) -- (4, 0) node[right] {\text{Re}};
+    \draw[->] (0, -4) -- (0, 4) node[above] {\text{Im}};
+
+    % Первая окружность радиусом 3
+    \draw[thick, blue] (0, 0) circle (1.5);
+    \node at (1.75, -0.3) {3};
+
+    % Вторая окружность радиусом 6
+    \draw[thick, red] (0, 0) circle (3);
+    \node at (3.25, -0.3) {6};
+\end{tikzpicture}
+\\
+\subsection*{Рассмотрим область |z| < 3:}
+$$f(z) = \frac{3}{z^2} \cdot \bigg(\frac{2}{z + 6} - \frac{1}{z - 3}\bigg) = \frac{1}{z^2} \cdot \bigg(\frac{1}{1 + \frac{z}{6}} + \frac{1}{1 - \frac{z}{3}}\bigg) =$$
+$$= \frac{1}{z^2} \cdot \bigg[ \bigg(1 - \frac{z}{6} + \frac{z^2}{36} - \frac{z^3}{216} + ...\bigg) + \bigg(1 + \frac{z}{3} + \frac{z^2}{9} + \frac{z^3}{27} + ...\bigg) \bigg] =$$
+$$\bigg(\frac{1}{z^2} - \frac{1}{6z} + \frac{1}{36} - \frac{z}{216} + ...\bigg) + \bigg(\frac{1}{z^2} + \frac{1}{3z} + \frac{1}{9} + \frac{z}{27} + ...\bigg)$$
+\subsection*{Рассмотрим область 3 < |z| < 6:}
+$$f(z) = \frac{3}{z^2} \cdot \bigg(\frac{2}{z + 6} - \frac{1}{z - 3}\bigg) = \frac{1}{z^2} \cdot \bigg(\frac{1}{1 + \frac{z}{6}} + \frac{3}{z(1 - \frac{3}{z})}\bigg) =$$
+$$= \frac{1}{z^2} \cdot \bigg[ \bigg(1 - \frac{z}{6} + \frac{z^2}{36} - \frac{z^3}{216} + ...\bigg) + \bigg(\frac{3}{z} + \frac{9}{z^2} + \frac{27}{z^3} + \frac{81}{z^4} ...\bigg) \bigg] =$$
+$$\bigg(\frac{1}{z^2} - \frac{1}{6z} + \frac{1}{36} - \frac{z}{216} + ...\bigg) + \bigg(\frac{3}{z^3} + \frac{9}{z^4} + \frac{27}{z^5} + \frac{81}{z^6} ...\bigg)$$
+\subsection*{Рассмотрим область |z| > 6:}
+$$f(z) = \frac{3}{z^2} \cdot \bigg(\frac{2}{z + 6} - \frac{1}{z - 3}\bigg) = \frac{1}{z^2} \bigg[\frac{6}{z(1 + \frac{6}{z})} + \frac{3}{z(1 - \frac{3}{z})} \bigg] =$$
+$$= \frac{1}{z^2} \cdot \bigg[ \bigg(\frac{6}{z} - \frac{36}{z^2} + \frac{216}{z^3} - \frac{1296}{z^4} + ...\bigg) + \bigg(\frac{3}{z} + \frac{9}{z^2} + \frac{27}{z^3} + \frac{81}{z^4} ...\bigg) \bigg] =$$
+$$= \bigg[ \bigg(\frac{6}{z^3} - \frac{36}{z^4} + \frac{216}{z^5} - \frac{1296}{z^6} + ...\bigg) + \bigg(\frac{3}{z^3} + \frac{9}{z^4} + \frac{27}{z^5} + \frac{81}{z^6} ...\bigg) \bigg]$$
+
+\subsection*{Ответ:}
+\begin{itemize}
+\item \textbf{В окрестности нуля} ($|z| < 3$):
+$$\frac{2}{z^2} + \frac{1}{6z} + \frac{5}{36} + \frac{7}{216}z + \cdots$$
+\item \textbf{В окрестности бесконечности} ($|z| > 6$):
+$$f(z) = \frac{9}{z^3} - \frac{27}{z^4} + \frac{243}{z^5} - \frac{1215}{z^6} + \cdots$$
+\end{itemize}
+
+\section{Найти все лорановские разложения по степеням $z - z_0$ $$4 \cdot \frac{z - 2}{(z + 1)(z - 3)}; z_0 = 2 - 2i$$}
+преобразуем данную функцию:
+$$f(z) = 4 \cdot \frac{z-2}{(z+1)(z-3)} = \frac{3}{z+1} + \frac{1}{z-3}$$
+Используем разложения в ряд Тейлора в окрестности точки $z_0$ 
+$$\frac{1}{z+a} = \frac{1}{a} - \frac{z}{a^2} + \frac{z^2}{a^3} - \frac{z^3}{a^4} + ... = \sum_{n=0}^{\infty} \frac{(-1)^n \cdot z^n}{a^{n+1}}$$
+$$\frac{3}{z+1} = 3 \cdot \frac{1}{z+1} = 3 \cdot \frac{1}{(z-z_0) + 3 - 2i} = 3 \cdot \sum_{n=0}^{\infty} \frac{(-1)^n \cdot (z-z_0)^n}{(3 - 2i)^{n+1}}$$
+$$\frac{1}{z-3} = \frac{1}{(z-z_0) - 1 - 2i} = \sum_{n=0}^{\infty} \frac{(-1)^n \cdot (z-z_0)^n}{(-1 - 2i)^{n+1}} = -\sum_{n=0}^{\infty} \frac{(z-z_0)^n}{(-1 - 2i)^{n+1}}$$
+Таким образом:
+$$f(z) = \frac{3}{z+1} + \frac{1}{z-3} = 3 \cdot \sum_{n=0}^{\infty} \frac{(-1)^n \cdot (z-z_0)^n}{(3 - 2i)^{n+1}} -\sum_{n=0}^{\infty} \frac{(z-z_0)^n}{(-1 - 2i)^{n+1}} =$$
+$$ \sum_{n=0}^{\infty} \bigg( \frac{3 \cdot (-1)^n}{(3 - 2i)^{n+1}} - \frac{1}{(-1 - 2i)^{n+1}} \bigg) \cdot (z-z_0)^n$$
+\subsection*{Ответ:}
+$$f(z) = \sum_{n=0}^{\infty} \bigg( \frac{3 \cdot (-1)^n}{(3 - 2i)^{n+1}} - \frac{1}{(-1 - 2i)^{n+1}} \bigg) \cdot (z-z_0)^n$$
+
+\section{Разложить данную функцию в ряд Лорана в окрестности точки $z_0 = \pi$ : $$z\cdot e^{\frac{\pi z}{z - \pi}}$$}
+Введём замену переменной \( w = z - z_0 = z - \pi \), тогда \( z = w + \pi \):
+    $$f(w + \pi) = (w + \pi) \cdot e^{\frac{\pi(w + \pi)}{w}} = (w + \pi) \cdot e^{\pi} \cdot e^{\frac{\pi^2}{w}}$$
+Разложим экспоненту в ряд:
+    $$e^{{\pi^2}/{w}} = \sum_{n=0}^{\infty} \frac{\pi^{2n}}{n! w^n}$$
+Умножим на оставшиеся множители:
+$$f(w + \pi) = e^{\pi} \cdot (w + \pi) \cdot \sum_{n=0}^{\infty} \frac{\pi^{2n}}{n! w^n} = e^{\pi} \left( \sum_{n=0}^{\infty} \frac{\pi^{2n}}{n! w^{n-1}} + \pi \sum_{n=0}^{\infty} \frac{\pi^{2n}}{n! w^n} \right)$$
+Приведём к общему виду:
+$$f(w + \pi) = e^{\pi} \left( \sum_{n=-1}^{\infty} \frac{\pi^{2n+2}}{(n+1)! w^n} + \pi \sum_{n=0}^{\infty} \frac{\pi^{2n}}{n! w^n} \right) = e^{\pi} \left( \frac{\pi^2}{w} + \sum_{n=0}^{\infty} \left( \frac{\pi^{2n+2}}{(n+1)!} + \frac{\pi^{2n+1}}{n!} \right) \frac{1}{w^n} \right)$$
+Возвращаемся к переменной \( z \):
+$$f(z) = e^{\pi} \left( \frac{\pi^2}{z - \pi} + \sum_{n=0}^{\infty} \left( \frac{\pi^{2n+2}}{(n+1)!} + \frac{\pi^{2n+1}}{n!} \right) \frac{1}{(z - \pi)^n} \right)$$
+\subsection*{Ответ:}
+$$f(z) = \frac{e^{\pi} \pi^2}{z - \pi} + e^{\pi} \sum_{n=0}^{\infty} \left( \frac{\pi^{2n+2}}{(n+1)!} + \frac{\pi^{2n+1}}{n!} \right) \frac{1}{(z - \pi)^n}$$
+
+\section{Определить тип особой точки $z = 0$ для функции $$z \cdot e^{{4}/{z^3}}$$}
+Применим разложение в ряд Лорана в окрестности точки $z = 0$:\\
+$$f(z) = z \cdot e^{{4}/{z^3}} = z\bigg(1 + \frac{4}{z^3} + \frac{16}{2! \cdot z^6} + \frac{64}{3! \cdot z^9} + ...\bigg) = z +  \frac{4}{z^2} + \frac{16}{2! \cdot z^5} + \frac{64}{3! \cdot z^8} + ...$$
+Теперь выделим правильную и главную части ряда Лорана:
+$$f(z) = z +  \frac{4}{z^2} + \frac{16}{2! \cdot z^5} + \frac{64}{3! \cdot z^8} + ...$$
+z - правильная часть\\
+остальное - главная часть\\
+\\
+Поскольку главная часть содержит бесконечное число членов, то точка для заданной функции является существеной особой точкой\\
+\subsection*{Ответ:}
+Точка $z = 0$ является существеной особой точкой
+
+\section{Для данной функции найти все изолированные особые точки и определить их тип: $$f(z) = \frac{1}{z} + \sin{\frac{1}{z^2}}$$}
+Особые точки возникают там, где функция не определена или не является аналитической.
+\begin{itemize}
+    \item Первое слагаемое \({1}/{z}\) имеет особую точку при \(z = 0\).
+    \item Второе слагаемое \(\sin\left({1}/{z^2}\right)\) не определено при \(z = 0\), так как \({1}/{z^2}\) стремится к бесконечности.
+\end{itemize}
+Единственной изолированной особой точкой в конечной комплексной плоскости является \(z = 0\).
+\\
+\\
+Исследуем поведение функции в окрестности \(z = 0\), разложив её в ряд Лорана.
+\\
+Используем известное разложение синуса:
+$$\sin w = w - \frac{w^3}{6} + \frac{w^5}{120} - \dots \quad \text{для} \quad w = \frac{1}{z^2}$$
+$$\sin\left(\frac{1}{z^2}\right) = \frac{1}{z^2} - \frac{1}{6 z^6} + \frac{1}{120 z^{10}} - \dots$$
+\subsubsection*{Ряд Лорана для \(f(z)\):}
+$$f(z) = \frac{1}{z} + \sin\left(\frac{1}{z^2}\right) = \frac{1}{z} + \frac{1}{z^2} - \frac{1}{6 z^6} + \frac{1}{120 z^{10}} - \dots$$
+Главная часть ряда (отрицательные степени \(z\)) содержит бесконечное число членов, то особая точка является \textbf{существенно особой}.
+\subsection*{Проверка других точек}
+\begin{itemize}
+    \item Для \(z \neq 0\) функция \(f(z)\) аналитична.
+    \item На бесконечности (\(z \to \infty\)):
+    $$\frac{1}{z} \to 0, \quad \sin\left(\frac{1}{z^2}\right) \approx \frac{1}{z^2} \to 0,$$
+    поэтому \(z = \infty\) — устранимая особая точка
+\end{itemize}
+\subsection*{Ответ:}
+В конечной плоскости функция имеет одну изолированную особую точку:
+$$z = 0 \text{ — существенно особая точка}$$
+На бесконечности функция имеет изолированную устранимую особую точку:
+$$z = \infty \text{ — устранимая особая точка}$$
+
+\end{document}1
